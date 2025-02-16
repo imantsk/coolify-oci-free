@@ -16,3 +16,11 @@ systemctl status sshd
 # Permit root login
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 systemctl restart sshd
+
+# Setup swapfile
+fallocate -l 2G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+sysctl vm.swappiness=10
+sysctl vm.vfs_cache_pressure=50
