@@ -14,14 +14,9 @@ variable "source_image_id" {
 }
 
 variable "num_worker_instances" {
-  description = "Number of Coolify worker instances to deploy (max 3 for free tier)."
+  description = "Number of Coolify worker instances to deploy (max 4 for free tier)."
   type        = number
-  default     = 1
-}
-
-variable "availability_domain_main" {
-  description = "Availability domain for coolify-main instance. Find it Core Infrastructure → Compute → Instances → Availability domain (left menu). For example: WBJv:EU-FRANKFURT-1-AD-1"
-  type        = string
+  default     = 4
 }
 
 variable "availability_domain_workers" {
