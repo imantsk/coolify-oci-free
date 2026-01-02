@@ -38,6 +38,7 @@ resource "oci_core_instance" "coolify_worker" {
   source_details {
     source_id   = local.instance_config.source_details.source_id
     source_type = local.instance_config.source_details.source_type
+    boot_volume_size_in_gbs = local.boot_volume_sizes[count.index]
   }
 
   agent_config {

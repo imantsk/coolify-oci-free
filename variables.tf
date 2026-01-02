@@ -41,3 +41,9 @@ variable "ocpus" {
   type        = string
   default     = "1" # OCI Free
 }
+
+variable "always_free_block_storage_gbs" {
+  type        = number
+  default     = 200
+  description = "Always Free block storage pool (boot + block volumes combined)."
+}
