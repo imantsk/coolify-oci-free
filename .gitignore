@@ -9,4 +9,3 @@
 .env
 .ssh
 **/node_modules/
-.terraform.lock.hcl
