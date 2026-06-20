@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Grow root filesystem to use the full boot volume (boot_volume_size_in_gbs)
+/usr/libexec/oci-growfs -y || oci-growfs -y || true
+
 # Add ubuntu SSH authorized keys to the root user
 mkdir -p /root/.ssh
 cp /home/ubuntu/.ssh/authorized_keys /root/.ssh/
